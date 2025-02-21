@@ -4,6 +4,8 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FileText } from "lucide-react";
 import { motion } from "framer-motion"
 
+import { baseURL } from "../utils/config"
+
 export default function Hero() {
   return (
     <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 relative overflow-hidden mt-0">
@@ -47,7 +49,7 @@ export default function Hero() {
           {[
             { href: "https://github.com/Arnav-Menon", icon: SiGithub, text: "GitHub" },
             { href: "https://www.linkedin.com/in/arnav-menon/", icon: SiLinkedin, text: "LinkedIn" },
-            { href: "/portfolio-website/arnav-menon-resume.pdf", icon: FileText, text: "Resume" },
+            { href: `${baseURL}/arnav-menon-resume.pdf`, icon: FileText, text: "Resume" },
           ].map((link, index) => (
             <motion.a
               key={index}

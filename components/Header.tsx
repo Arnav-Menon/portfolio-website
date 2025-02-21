@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { smoothScroll } from "../utils/smoothScroll"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -30,6 +31,7 @@ export default function Header() {
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}
+                onClick={(e) => smoothScroll(e, item.toLowerCase())}
                 className={`px-3 py-2 rounded-md transition-colors ${
                   isScrolled ? "text-gray-600 hover:text-blue-600 hover:bg-gray-100" : "text-white hover:bg-white/20"
                 }`}

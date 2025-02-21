@@ -5,15 +5,17 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "phosphor-react"
 
+import { baseURL } from "../utils/config"
+
 export default function Projects() {
   const projects = [
     {
       title: "Movie Recommendation Service",
       description:
         "Designed a CI/CD pipeline with Jenkins and Docker, implemented scalable data ingestion and model training pipelines using Kafka, Docker, and FastAPI, processing over 10 million data points.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: `${baseURL}/movie-recommender-system.jpg`,
       tags: ["Jenkins", "Docker", "Kafka", "FastAPI", "PyTest"],
-      link: "#",
+      link: "https://github.com/Arnav-Menon/movie-recommender-system",
     },
     {
       title: "HTTP Video Server",
@@ -72,6 +74,7 @@ export default function Projects() {
                 </div>
                 <Link
                   href={project.link}
+                  target="_blank"
                   className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center"
                 >
                   Learn more <ArrowRight size={16} className="ml-1" />
