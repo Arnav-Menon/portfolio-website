@@ -47,7 +47,7 @@ export default function Hero() {
           {[
             { href: "https://github.com/Arnav-Menon", icon: SiGithub, text: "GitHub" },
             { href: "https://www.linkedin.com/in/arnav-menon/", icon: SiLinkedin, text: "LinkedIn" },
-            { href: "/arnav-menon-resume.pdf", icon: FileText, text: "Resume" },
+            { href: "/portfolio-website/arnav-menon-resume.pdf", icon: FileText, text: "Resume" },
           ].map((link, index) => (
             <motion.a
               key={index}
