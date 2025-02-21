@@ -1,6 +1,7 @@
 "use client"
 
-import { GitlabIcon as GitHub, Linkedin, FileText } from "lucide-react"
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FileText } from "lucide-react";
 import { motion } from "framer-motion"
 
 export default function Hero() {
@@ -44,8 +45,8 @@ export default function Hero() {
         </motion.p>
         <div className="flex justify-center space-x-4">
           {[
-            { href: "https://github.com/Arnav-Menon", icon: GitHub, text: "GitHub" },
-            { href: "https://www.linkedin.com/in/arnav-menon/", icon: Linkedin, text: "LinkedIn" },
+            { href: "https://github.com/Arnav-Menon", icon: SiGithub, text: "GitHub" },
+            { href: "https://www.linkedin.com/in/arnav-menon/", icon: SiLinkedin, text: "LinkedIn" },
             { href: "/arnav-menon-resume.pdf", icon: FileText, text: "Resume" },
           ].map((link, index) => (
             <motion.a
