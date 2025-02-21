@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 59 130 246; /* Blue-500 */
+  --primary-dark: 29 78 216; /* Blue-700 */
+  --secondary: 107 114 128; /* Gray-500 */
+  --accent: 249 115 22; /* Orange-500 */
+  --background: 243 244 246; /* Gray-100 */
+  --foreground: 17 24 39; /* Gray-900 */
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
