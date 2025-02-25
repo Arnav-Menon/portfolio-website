@@ -1,20 +1,23 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
-import { smoothScroll } from "../utils/smoothScroll"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10)
+  }, [])
 
+  useEffect(() => {
+    // Check initial scroll position
+    handleScroll()
+
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [handleScroll])
 
   return (
     <header
@@ -31,7 +34,6 @@ export default function Header() {
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}
-                onClick={(e) => smoothScroll(e, item.toLowerCase())}
                 className={`px-3 py-2 rounded-md transition-colors ${
                   isScrolled ? "text-gray-600 hover:text-blue-600 hover:bg-gray-100" : "text-white hover:bg-white/20"
                 }`}
